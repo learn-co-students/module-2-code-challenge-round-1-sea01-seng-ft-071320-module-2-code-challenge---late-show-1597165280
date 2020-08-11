@@ -25,3 +25,7 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+15.times do 
+  Apperance.create(guest: Guest.all.sample, episode: Episode.all.sample, rating:3)
+end
+

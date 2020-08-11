@@ -1,0 +1,13 @@
+<h1><%="Episode #{@episode.number}"%></h1>
+<p><%="This episode took place on #{@episode.date}" %></p>
+
+
+guests:
+<ul>
+<% @episode.guests.each do |guest|%>
+    <li><%= link_to guest.name, guest_path(guest)%></li>
+<% end%>
+<ul>
+
+average rating:
+<%= @episode.apperances.average(:rating) %>

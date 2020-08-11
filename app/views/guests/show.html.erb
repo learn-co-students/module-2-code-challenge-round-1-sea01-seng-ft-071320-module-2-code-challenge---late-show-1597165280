@@ -1,0 +1,19 @@
+episodes and ratings
+
+<ul>
+
+<% @guest.episodes.each do |e|%>
+    <li><%= e.number%></li>
+<%end%>
+</ul>
+
+
+<ul>
+<% @guest.apperances.each do |e|%>
+    <li><%= e.rating%></li>
+<%end%>
+</ul>
+
+<% @guest.episodes.each do |e|%>
+    <%= link_to e.date, episode_path(e) %>
+<% end %>
