@@ -1,0 +1,15 @@
+<h3><%= @guest.name %></h3>
+<h4><u><%= "Episode List" %></u></h4>
+<% @guest.episodes.each do |episode| %>
+    <%= link_to episode.date, episode %><br>
+<% end %>
+
+<%# Rating
+<%= Appearance.find_by(guest: @guest, episode: episode).rating %>
+
+<%# <% @guest.episodes.each do |episode| %>
+    <%# <%= link_to episode.date, episode %><br>
+    <%# <% episode.appearances.each { |e| %>
+    <%# <%= e.rating %><br>
+<%# <% } %>
+<%# <% end %>
