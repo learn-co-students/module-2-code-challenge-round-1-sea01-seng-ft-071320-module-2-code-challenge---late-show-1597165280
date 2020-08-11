@@ -1,0 +1,22 @@
+<h1> create new apperance </h1>
+
+<% if !!flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+        <% end %>   
+    </ul> 
+<% end %>
+
+<%= form_for @apperance do |f|%>
+    <%= f.label :guest_id, "Guest"%><br>
+    <%= f.collection_select :guest_id, Guest.all, :id, :name%><br>
+
+    <%= f.label :episode_id, "episode number:"%><br>
+    <%= f.collection_select :episode_id, Episode.all, :id, :number%><br>
+
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating%><br>
+    
+    <%= f.submit%>
+<% end%>
