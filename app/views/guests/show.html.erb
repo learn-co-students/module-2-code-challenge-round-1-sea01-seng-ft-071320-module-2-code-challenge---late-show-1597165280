@@ -1,0 +1,15 @@
+<h1><%= @guest.name %> </h1>
+<ol>
+<% list = @guest.appearances.sort {|a| a.rating} %>
+<% list.each do |app| %>
+<li> <%=link_to  "#{app.episode.date} rating: #{app.rating}", app.episode %> </li>
+    <%end %>
+</ol>
+
+<br>
+
+<%=link_to "New appearance", new_appearance_path %> 
+<br>
+<%=link_to "All episodes", episodes_path %> 
+<br>
+<%=link_to "All Guests", guests_path	 %> 
