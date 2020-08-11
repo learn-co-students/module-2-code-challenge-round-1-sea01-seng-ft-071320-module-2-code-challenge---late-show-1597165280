@@ -1,0 +1,11 @@
+<% if flash[:alert] %>
+    <%# flash[:alert] do |alert| %>
+    <%= alert %>
+    <%# end %>
+<% end %>
+<%= form_for @appearance do |f| %>
+    Episode: <%= f.collection_select :episode_id, Episode.all, :id, :date %><br>
+    Guest: <%= f.collection_select :guest_id, Guest.all, :id, :name %><br>
+    Rating: <%= f.select :rating, [['1'],['2'],['3'],['4'],['5']] %><br>
+    <%= f.submit %>
+<% end %>

@@ -1,7 +1,7 @@
-<h1>All The Guests</h1>
+<h2>Past Tonight Show Guests</h2>
 
 <ul>
-  <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+  <% @guests.sort_by(&:name).each do |guest| %>
+    <li><%= link_to guest.name, guest %></li>
   <% end %>
 </ul>
