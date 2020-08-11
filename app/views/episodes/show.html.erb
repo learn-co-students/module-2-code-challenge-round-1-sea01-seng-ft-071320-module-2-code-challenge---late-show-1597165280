@@ -1,0 +1,21 @@
+<header>
+  <h1><%= "Episode #{@episode.number} - #{@episode.print_date}" %></h1>
+  <% if !!flash[:message] %>
+    <span class='app_messages'><%= flash[:message] %></span>
+  <% end %>
+</header>
+
+<main>
+  <div class='rating_display'>
+    <h3>Averate Rating: <%= "#{@episode.average_rating}" %></h3>
+  </div>
+
+  <h2>Guests:</h2>
+  <div class='guest_list'>
+    <ul>
+      <% @episode.guests.each do |guest| %>
+        <li><%= link_to guest.name, guest %></li>
+      <% end %>
+    </ul>
+  </div>
+</main>
