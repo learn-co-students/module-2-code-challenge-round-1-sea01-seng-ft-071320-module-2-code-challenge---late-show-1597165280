@@ -1,0 +1,10 @@
+<h1> Episode <%= @episode.number  %> </h1>
+
+Average Show Rating <%= @episode.appearances.average(:rating) %>
+
+    <ul>
+        <% @episode.guests.each do |guest| %>
+        <li> Guest: <%= link_to guest.name, guest %>
+    </ul>
+<% end %>
+
