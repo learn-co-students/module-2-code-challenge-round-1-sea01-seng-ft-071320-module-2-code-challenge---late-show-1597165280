@@ -1,0 +1,15 @@
+episode show page 
+<%# Episode date
+A list of the guests who were on that episode
+Each guest's name should link to the Guest Show page %>
+
+
+
+
+<%@episode.guests.each do |guest|%> 
+  <h2> <%= link_to guest.name, guest_path(guest) %>%   </h2> <br>
+  <h2><%=@episode.date%> </h2>
+  
+<%end%>
+
+

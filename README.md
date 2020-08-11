@@ -1,33 +1,17 @@
-# Rails Code Challenge - Late Show
 
-For this assessment, you'll be working with Late Night TV show domain.
 
-In this repo, there is a Rails application with some features built out. Your job is to extend this code to add the functionality described in the deliverables below.
+Before you begin coding your solution, clone this repo and then `cd` into it. 
 
-## Topics
-
-- MVC
-- REST
-- Request-Response Cycle
-- Forms and Form Helpers
-- ActiveRecord
-- Validations
-
-## Setup
-
-Before you begin coding your solution, clone this repo and then `cd` into it. Then run `bundle install`, `rails db:migrate`, and `rails db:seed` to install dependencies and set up the database, and run `rails s` to start the server.
+x Then run `bundle install`, 
+x `rails db:migrate`, and 
+x `rails db:seed` 
+x `rails s` to start the server.
 
 ## The Domain
-
-The application keeps track of the guests that have appeared on the show.
-
-There are three models in the domain: Guest, Episode, and Appearance.
 
 Guests and Episodes have a many to many relationship through Appearances. A single Appearance belongs to one Guest and one Episode.
 
 ## What You Already Have
-
-The starter code includes migrations, models, and seed data for Guests and Episodes. There are also routes, controller actions, and views to support listing the guests and episodes.
 
 After running the setup instructions above, visiting `'/guests'` will display all of the guests, and visiting `'/episodes'` will display all of the episodes.
 
@@ -62,9 +46,7 @@ Guests
 
 ## Instructions
 
-Update the code of the application to meet the following deliverables. Follow RESTful naming conventions and the MVC pattern to divide responsibility.
-
-***Read through these deliverables carefully to understand the requirements for this code challenge. Tackle them one by one, as they build on each other sequentially.***
+*** Tackle them one by one, as they build on each other sequentially.***
 
 
 
@@ -72,9 +54,9 @@ Update the code of the application to meet the following deliverables. Follow RE
 
 To log that a specific Guest appeared on a certain Episode, we need to create the Appearance model. **Make the necessary updates to the schema and models** so that:
 
-- Guest can appear on many episodes
-- Episode can have multiple guests
-- Appearance stores a numeric rating
+- x Guest can appear on many episodes
+- x Episode can have multiple guests
+- x Appearance stores a numeric rating
 
 ### 2. New Appearance Form
 
