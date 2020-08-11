@@ -1,0 +1,22 @@
+<% if !!flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_with model: @appearance, local: true  do |f| %> 
+
+    <%= f.label :rating %>
+    <%= f.number_field :rating %> <br>
+
+    <%= f.label :guest_id %>
+    <%= f.collection_select :guest_id, Guest.all, :id, :name %> <br>
+
+    <%= f.label :episode_id %>
+    <%= f.collection_select :episode_id, Episode.all, :id, :date %> <br>
+    
+    <%= f.submit %>
+
+    <% end %>
