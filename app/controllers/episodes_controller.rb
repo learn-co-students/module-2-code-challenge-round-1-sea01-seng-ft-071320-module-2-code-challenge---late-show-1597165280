@@ -2,7 +2,7 @@ class EpisodesController < ApplicationController
   before_action :draw_episode, only: [ :show ]
 
   def index
-    @episodes = Episode.all
+    @episodes = Episode.all # 'SELECT * FROM episodes'
   end
 
   def show
