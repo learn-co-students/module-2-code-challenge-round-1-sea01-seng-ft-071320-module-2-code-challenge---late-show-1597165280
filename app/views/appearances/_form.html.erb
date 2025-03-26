@@ -1,0 +1,29 @@
+<%= form_with model: appearance, local: true do |f| %>
+  <div class='form_field'>
+    <%= f.label :guest_id %>
+    <%= f.collection_select :guest_id, Guest.all, :id, :name %>
+  </div>
+
+  <div class='form_field'>
+    <%= f.label :episode_id %>
+    <%= f.collection_select :episode_id, Episode.all, :id, :print_num_and_date %>
+  </div>
+
+  <div class='form_field'>
+    <%= f.label :rating %>
+    <%= f.number_field :rating, { value: 1, min: 1 } %> <!-- deliberately left this without a max so you can fire the error handling -->
+  </div>
+
+  <%= f.submit submit_text %>
+<% end %>
+
+<div class='error_messages'>
+  <% if !!flash[:error_messages] %>
+    <ul>
+      <li>Please correct the following:</li>
+      <% flash[:error_messages].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

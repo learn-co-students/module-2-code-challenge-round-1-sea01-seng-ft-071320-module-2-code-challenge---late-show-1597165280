@@ -1,0 +1,14 @@
+<header>
+  <h1><%= @guest.name %></h1>
+</header>
+
+<main>
+  <h2>Appearances:</h2>
+  <div class='episodes_list'>
+    <ul>
+      <% @guest.appearances.sort { |a, b| b.rating <=> a.rating }.each do |a| %>
+        <li><%= link_to "#{a.episode.print_date}", a.episode %> - Rating: <%= "#{a.rating}" %></li>
+      <% end %>
+    </ul>
+  </div>
+</main>
